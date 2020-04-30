@@ -2,7 +2,7 @@ table 50002 itemquantity2
 {
     Caption = 'itemquantity2';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; itemNo; Code[20])
@@ -10,10 +10,13 @@ table 50002 itemquantity2
             Caption = 'itemNo';
             DataClassification = ToBeClassified;
         }
-        field(2; itemName; Text)
+        field(2; itemName; Text[80])
         {
             Caption = 'itemName';
-            DataClassification = ToBeClassified;
+            FieldClass = FlowField;
+            CalcFormula = lookup (Item.Description where("No." = field(itemNo)));
+            //DataClassification = ToBeClassified;
+
         }
         field(3; Quantity; Integer)
         {
@@ -28,5 +31,5 @@ table 50002 itemquantity2
             Clustered = true;
         }
     }
-    
+
 }

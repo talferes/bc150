@@ -9,7 +9,7 @@ table 50001 itemQuantity
         {
             Caption = 'Item';
             DataClassification = ToBeClassified;
-            //TableRelation = Item."No.";
+            TableRelation = Item."No.";
         }
         field(2; Quantity; Integer)
         {
