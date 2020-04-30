@@ -15,11 +15,11 @@ table 50000 LstCustomer
         field(2; CustomerNo; code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = Customer."No.";
+            //TableRelation = Customer."No.";
             trigger OnValidate()
             begin
-                if GCustomer.Get(CustomerNo) then
-                    CustomerName := GCustomer.Name;
+                // if GCustomer.Get(CustomerNo) then
+                //     CustomerName := GCustomer.Name;
                 /*
                 GSalesOrder.SetRange("Document Type", GSalesOrder."Document Type"::Order);
                 GSalesOrder.SetRange("Sell-to Customer No.", GCustomer."No.");
@@ -54,8 +54,8 @@ table 50000 LstCustomer
 
     }
     var
-        GCustomer: Record Customer;
-        GSalesOrder: Record "Sales Header";
+    //GCustomer: Record Customer;
+    //GSalesOrder: Record "Sales Header";
 
 
 }
